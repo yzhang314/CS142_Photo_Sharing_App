@@ -1,0 +1,70 @@
+.user-comments {
+    font-family:Palatino, Helvetica, sans-serif;
+    font-size:large;
+    padding: 20px;
+}
+
+a {
+    text-decoration:none;
+}
+
+.buttonToPhoto {
+    margin-top:10px;
+    width:100%;
+    background-color: #4253af;
+    color:white;
+    font-family:Palatino, Helvetica, sans-serif;
+    padding:10px;
+}
+
+.image-small{
+    width:100%;
+}
+
+.comment-card {
+    width:30%;
+    float:left;
+    max-height:500px;
+}
+.photo-credit {
+    text-align:right;
+    font-size:15px;
+}
+.photo-comment{
+    font-size:12px;
+}
+
+.photo-detail-button-wrapper{
+    float:right;
+}
+
+.photo-detail-button {
+    font-size:10px;
+    margin:0;
+    height:10px;
+    padding-top:0;
+    padding-bottom: 0;
+}
+
+.delete-comment2-button-wrapper{
+    float:left;
+}
+
+.delete-comment2-button {
+    font-size:10px;
+    margin:0;
+    padding-top:0;
+    padding-bottom: 0;
+}
+
+.comment-container {
+    padding:15px;
+}
+
+.image-link {
+    width:50%;
+}
+
+.comment-image {
+    max-height: 250px;
+}

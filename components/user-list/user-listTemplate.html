@@ -1,0 +1,18 @@
+<div class = "user-list" ng-init="userListInit()">
+    <h1 class="label-user-list"> User List</h1>
+    <md-divider> </md-divider>
+    <div class="content-user-list">
+        <ul ng-repeat="userObj in user.userList">
+            <li>
+                <a href="{{'#!/users/' + main.checkStatus + '/' + userObj._id}}">
+                    {{userObj.first_name + " " + userObj.last_name}}
+                </a>
+                <span  ng-if="main.checkStatus === true" class="bubble-red"> <a href="{{'#!/users/comments/' + main.checkStatus + '/'  + userObj._id}}"> {{userObj.numComments}} </a> </span>
+                <span  ng-if="main.checkStatus === true" class="bubble-green">
+                    <a href="{{'#!/photos-advance/' +  main.checkStatus + '/' + userObj._id + '/' + userObj.firstPhotoId}}">{{userObj.numPhotos}} </a>
+                </span>
+            </li>
+        </ul>
+    </div>
+
+</div>

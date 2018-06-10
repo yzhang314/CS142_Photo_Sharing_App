@@ -1,0 +1,47 @@
+.modal {
+    font-family:Palatino, Helvetica, sans-serif;
+    font-size:large;
+}
+
+.modal-display{
+    text-align:center;
+}
+
+.modal-container {
+    margin-top:10px;
+    margin-left:10px;
+    margin-right:10px;
+    padding:0;
+}
+
+
+.modal-text {
+    padding:10px;
+}
+
+.modal-card {
+    margin-top:10px;
+    float:left;
+    width:auto;
+    display:inline-block;
+    margin-bottom:10px;
+}
+
+.modal-photo-credit {
+    font-size:10px;
+}
+
+.modal-photo-detail-button-wrapper {
+    float:right;
+    margin-right:0;
+    margin-bottom:10px;
+}
+
+.modal-date {
+    font-size:10px;
+}
+
+.modal-photo-detail-button {
+    font-size:10px;
+    margin:0;
+}

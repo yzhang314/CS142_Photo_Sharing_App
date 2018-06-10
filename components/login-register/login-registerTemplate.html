@@ -1,0 +1,100 @@
+<div class="login-register">
+<div ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Login">
+                <div layout="column" class="login">
+                    <md-content layout-padding>
+                        <form name="projectForm">
+                            <div layout="row">
+                                <md-input-container flex="50">
+                                    <label>Login Name</label>
+                                    <md-icon md-svg-src="/images/user.svg"></md-icon>
+                                    <input placeholder="loginName" ng-model="login.name">
+                                </md-input-container>
+                            </div>
+                            <div layout="row">
+                                <md-input-container flex="50">
+                                    <label>Password</label>
+                                    <md-icon md-svg-src="/images/password.svg" ></md-icon>
+                                    <input placeholder="password" type="password" ng-model="login.password">
+                                </md-input-container>
+                            </div>
+                            <div class="login-error-reminder" ng-show="login.loginErrorReminder"> {{login.loginErrorReminder}} </div>
+                            <div class="button-login-wrapper">
+                                <md-button ng-click="onLogin()" class="md-raised md-primary"> Login </md-button>
+                            </div>
+                        </form>
+                    </md-content>
+                </div>
+            </md-tab>
+
+            <md-tab label="Register">
+                <div layout="column" class="register md-inline-form">
+                    <md-content layout-padding>
+                        <div>
+                            <form name="userForm">
+                                <div layout-gt-sm="row">
+                                    <md-input-container class="md-block" flex-gt-sm>
+                                        <label>User name</label>
+                                        <input ng-model="register.loginName">
+                                    </md-input-container>
+                                </div>
+                                <div layout-gt-sm="row">
+                                    <md-input-container class="md-block" flex-gt-sm>
+                                        <label>Password</label>
+                                        <input type="password" ng-model="register.password1">
+                                    </md-input-container>
+                                </div>
+
+                                <div layout-gt-sm="row">
+                                    <md-input-container class="md-block" flex-gt-sm>
+                                        <label>Confirm Password</label>
+                                        <input type="password" ng-model="register.password2">
+                                    </md-input-container>
+                                </div>
+
+
+                                <div layout-gt-sm="row">
+                                    <md-input-container class="md-block" flex-gt-sm>
+                                        <label>First name</label>
+                                        <input ng-model="register.firstName">
+                                    </md-input-container>
+
+                                    <md-input-container class="md-block" flex-gt-sm>
+                                        <label>Last Name</label>
+                                        <input ng-model="register.lastName">
+                                    </md-input-container>
+                                </div>
+
+                                <md-input-container class="md-block">
+                                    <label>Occupation</label>
+                                    <input ng-model="register.occupation">
+                                </md-input-container>
+
+                                <md-input-container class="md-block">
+                                    <label>Location</label>
+                                    <input ng-model="register.location">
+                                </md-input-container>
+
+
+                                <md-input-container class="md-block">
+                                    <label>Description</label>
+                                    <textarea ng-model="register.description" md-maxlength="100" rows="3" md-select-on-focus></textarea>
+                                </md-input-container>
+
+                                <div class="register-error-reminder" ng-show="register.registerErrorReminder"> {{register.registerErrorReminder}} </div>
+                                <div class="button-register-wraper">
+                                    <md-button class="button-register" ng-click="onRegister()" class="md-raised md-primary"> Register Me</md-button>
+                                </div>
+                            </form>
+                        </div>
+                    </md-content>
+                </div>
+
+            </md-tab>
+
+        </md-tabs>
+    </md-content>
+</div>
+</div>

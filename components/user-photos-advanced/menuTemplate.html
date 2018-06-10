@@ -1,0 +1,12 @@
+<md-card class="menu-main">
+    <span class="menu-header">Users you can mention: </span>
+    <md-divider></md-divider>
+    <ul class="dropdown-menu scrollable-menu menu-style" style="display:block">
+        <li mentio-menu-item="item" class="menu-item" ng-repeat="item in items track by $index">
+            <a class="text-primary" ng-bind-html="item.label | mentioHighlight:typedTerm:'menu-highlighted' | unsafe"></a>
+        </li>
+    </ul>
+</md-card>
+
+
+

@@ -1,0 +1,21 @@
+<div class="favorite" ng-init="favoriteInit()">
+    <md-card class="favorite-container">
+        <md-subheader ng-if="favorite.favorites.length > 0" class="favorite-title" class="md-no-sticky" > <strong>Photos that you favorite: </strong> </md-subheader>
+        <md-subheader ng-if="favorite.favorites.length === 0" class="favorite-title" class="md-no-sticky" > <strong>No favorite photos yet. :-) </strong> </md-subheader>
+        <div class="every-favorite">
+            <md-card class="mention-card" ng-repeat="favorite in favorite.favorites">
+                <img class="md-card-image favorite-image" ng-src="/images/{{favorite.file_name}}">
+                <md-card-content class="favorite-text" flex>
+                    <p class="favorite-photo-credit">Photo by <a href="{{'#!/users/' + main.checkStatus + '/' + favorite.user._id}}"> <strong> {{favorite.user.first_name}} {{favorite.user.last_name}} </strong> </a> </p>
+                    <span class="favorite-photo-modal-button-wrapper"><md-button class="md-accent favorite-photo-modal-button" ng-click="showModal(favorite)">Photo Modal</md-button></span>
+                    <span class = "delete-favorite-icon-wrapper">
+                        <md-button class="md-icon-button" aria-label="Delete" ng-click = "onDeleteFavorite(favorite)">
+                            <md-icon md-svg-icon="/images/delete.svg"></md-icon>
+                        </md-button>
+                    </span>
+        </md-card-content>
+        </div>
+    </md-card>
+</div>
+    </md-card>
+</div>

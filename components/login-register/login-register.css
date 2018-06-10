@@ -1,0 +1,60 @@
+.register-instruction {
+    font-size:18px;
+    color: #9c9c9c;
+    margin:20px;
+}
+
+.register-error-reminder {
+    font-size:20px;
+    color:red;
+    margin-bottom:30px;
+}
+
+.login-error-reminder {
+    font-size:20px;
+    color:red;
+    margin-bottom:30px;
+}
+
+.login-register {
+    font-family:Palatino, Helvetica, sans-serif;
+}
+
+.login-register::-webkit-input-placeholder {
+    font-family:Palatino, Helvetica, sans-serif;
+    margin-left:15px;
+}
+
+.login-register:-ms-input-placeholder {
+    font-family:Palatino, Helvetica, sans-serif;
+    font-size:15px;
+}
+
+.login-register:-moz-placeholder {
+    font-family:Palatino, Helvetica, sans-serif;
+    font-size:15px;
+}
+
+.login-register::-moz-placeholder {
+    font-family:Palatino, Helvetica, sans-serif;
+    font-size:15px;
+}
+
+.button-register-wrapper {
+    margin:0;
+}
+.button-register{
+    width:100%;
+    background-color: #4253af;
+    color:white;
+    font-family:Palatino, Helvetica, sans-serif;
+    padding:10px;
+    margin:0;
+}
+.login {
+    padding:15px;
+}
+.button-login-wrapper{
+}
+
+textarea, input, button, select, label { font-family: inherit; font-size: inherit; }

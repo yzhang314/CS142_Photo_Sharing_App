@@ -1,0 +1,37 @@
+<div class="user-photos">
+    <h3 class="header-photo"> Welcome to {{userPhoto.user.first_name + " " + userPhoto.user.last_name}}'s photo gallery </h3>
+    <div class="content">
+        <md-card ng-repeat = "photo in userPhoto.photos" class="photo">
+            <div class = "image-info">
+                <img ng-src="{{'/images/' + photo.file_name}}" class="image">
+                <div>
+                    Creation date and time: {{photo.date_time}}
+                </div>
+            </div>
+            <div ng-if="photo.comments.length > 0" class="comment">
+                    <md-list class="md-dense" flex>
+                        <md-subheader class="comment-title" class="md-no-sticky" > Recent Comment </md-subheader>
+                        <md-list-item class="md-3-line" ng-repeat="comments in photo.comments">
+                            <img ng-src="/images/avatar.png" class="md-avatar" />
+                            <div class="md-list-item-text" layout="column">
+                                <h3><a href="{{'#!/users/' + main.checkStatus + '/' + comments.user._id}}"> <strong>{{comments.user.first_name}} {{comments.user.last_name}}</strong></a></h3>
+                                <h4><p class="date"> {{comments.date_time}}</h4>
+                                <p>{{comments.comment}}</p>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-list-item>
+            </div>
+            <div class="add-comment" layout="column">
+                <md-subheader class="comment-title" class="md-no-sticky" > Add Your Comment: </md-subheader>
+                <md-input-container class="md-block">
+                    <textarea aria-label="comment-input" ng-model="userPhoto.newComment" class="comment-input" md-maxlength="100" rows="5" md-select-on-focus></textarea>
+                    <div class="add-comment-error-reminder" ng-show="userPhoto.commentErrorReminder"> {userPhoto.commentErrorReminder}} </div>
+                    <div class="button-add-comment">
+                        <md-button ng-click="onAddComment(photo)" class="md-raised md-primary">Add Comment</md-button>
+                    </div>
+                </md-input-container>
+            </div>
+        </md-card>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="user-photos-advanced" ng-init="photoAdvanceInit()" >
+    <div class="content">
+    <md-card>
+        <div id="buttons-advance">
+            <div class="button-previous">
+                <md-button ng-click="previous()" class="md-raised md-primary"> previous </md-button>
+            </div>
+            <div class="button-next">
+                <md-button ng-click="next()" class="md-raised md-primary">  next </md-button>
+            </div>
+        </div>
+
+        <div  class = "image-info-advance" flex>
+            <img ng-src="/images/{{photoAdvance.currentPhoto.file_name}}" class="image-advance">
+            <div>
+                Creation date and time: {{photoAdvance.currentPhoto.date_time}}
+            </div>
+        </div>
+
+        <div class="delete-photo">
+            <div class="delete-photo-button-wrapper">
+                <md-button class="md-warn md-raised md-hue-2" ng-if="photoAdvance.currentPhoto.user_id === main.loginUser._id" ng-click = "onDeletePhoto(photoAdvance.currentPhoto._id)">Delete Photo</md-button>
+            </div>
+        </div>
+
+        <div class="like">
+            <span class="like-indication" ng-if ="photoAdvance.currentPhoto.likeStatus === true">
+                 <md-button class="md-icon-button md-accent like-icon"  aria-label="Favorite">
+                <md-icon md-svg-icon="/images/favorite.svg"></md-icon>
+            </md-button>
+                You liked this photo!
+            </span>
+
+            <span class="like-number"> {{photoAdvance.currentPhoto.like.length}} likes
+            </span>
+            <span class="button-like">
+                <md-button class="md-accent" ng-if ="photoAdvance.currentPhoto.likeStatus === true" ng-click="onUnlike(photoAdvance.currentPhoto._id)"> unlike </md-button>
+                <md-button class="md-accent" ng-if ="photoAdvance.currentPhoto.likeStatus === false" ng-click="onLike(photoAdvance.currentPhoto._id)"> like </md-button>
+            </span>
+        </div>
+
+        <md-divider> </md-divider>
+
+        <div class="favorite">
+            <span class="favorite-indication" ng-if ="photoAdvance.currentPhoto.favoriteStatus === true">
+                 <md-button class="md-icon-button md-accent like-icon"  aria-label="Favorite">
+                <md-icon md-svg-icon="/images/favorite.svg"></md-icon>
+            </md-button>
+                You already favorite this photo! Please see your favorite list.
+            </span>
+            <span class="button-favorite">
+                <md-button class="md-accent" ng-if ="photoAdvance.currentPhoto.favoriteStatus === true" ng-click="onUnFavorite(photoAdvance.currentPhoto._id)"> Remove the favorite </md-button>
+                <md-button class="md-accent" ng-if ="photoAdvance.currentPhoto.favoriteStatus === false" ng-click="onFavorite(photoAdvance.currentPhoto._id)"> Favorite this Photo</md-button>
+            </span>
+        </div>
+        </md-card>
+
+        <md-card class="comment" ng-if="photoAdvance.currentPhoto.comments.length > 0">
+            <md-subheader class="comment-title" class="md-no-sticky" > <strong>Recent Comment: </strong> </md-subheader>
+            <md-list class="md-dense" flex>
+                <md-list-item class="md-3-line" ng-repeat="comments in photoAdvance.currentPhoto.comments">
+                    <img ng-src="/images/avatar.png" class="md-avatar" />
+                    <div class="md-list-item-text" layout="column">
+                        <h3><a href="{{'#!/users/' + main.checkStatus + '/' + comments.user._id}}"> <strong>{{comments.user.first_name}} {{comments.user.last_name}}</strong></a></h3>
+                        <h4><p class="date"> {{comments.date_time}}</h4>
+                        <p>{{comments.comment}}</p>
+                    </div>
+                    <div class = "delete-comment-icon-wrapper" ng-if="comments.user._id === main.loginUser._id">
+                    <md-button class="md-icon-button delete-comment-icon" aria-label="Delete" ng-click = "onDeleteComment(photoAdvance.currentPhoto._id, comments)">
+                        <md-icon md-svg-icon="/images/delete.svg"></md-icon>
+                    </md-button>
+                    </div>
+                </md-list-item>
+            </md-list>
+    </md-card>
+
+    <md-card class="add-comment">
+        <div layout="column">
+            <md-subheader class="comment-title" class="md-no-sticky" > Add Your Comment: </md-subheader>
+            <md-input-container class="md-block">
+                <textarea  mentio
+                           mentio-typed-text="typedTerm"
+                           mentio-template-url= 'components/user-photos-advanced/menuTemplate.html'
+                           mentio-items="photoAdvance.users | filter:label:typedTerm"
+                           mentio-select="getMentionedUser(item)"
+                           aria-label="comment-input" ng-model="photoAdvance.newComment" class="comment-input" md-maxlength="100" rows="5" md-select-on-focus>
+                </textarea>
+
+                <div class="add-comment-error-reminder" ng-show="photoAdvance.commentErrorReminder"> {{photoAdvance.commentErrorReminder}} </div>
+                <div class="button-add-comment">
+                    <md-button ng-click="onAddComment()" class="md-raised md-primary">Add Comment</md-button>
+                </div>
+            </md-input-container>
+        </div>
+    </md-card>
+    </div>
+</div>
+

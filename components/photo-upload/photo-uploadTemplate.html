@@ -1,0 +1,33 @@
+<div class="upload-photo" ng-init="photoUploadInit()">
+    <md-card class="upload-photo-container">
+        <md-subheader class="md-no-sticky upload-photo-title" ng-if="photoUpload.specifyButton === false"> <strong>Please select people who can view your photo (no selection indicates all people can view): </strong>
+        </md-subheader>
+        <md-subheader class="md-no-sticky upload-photo-title" ng-if="photoUpload.specifyButton === true"> <strong>Only you can view this photo now. </strong>
+        </md-subheader>
+    <div class="demo-select-all-checkboxes user-select-list" ng-if="photoUpload.showList === true" flex="100" ng-repeat="user in photoUpload.userList">
+        <md-checkbox ng-checked="isChecked(user)" ng-click="toggle(user)">
+            {{user.first_name}} {{user.last_name }}
+        </md-checkbox>
+    </div>
+    <span class="upload-button-wrapper" ng-click="doNotSpecify()" ng-if="main.login === true && photoUpload.specifyButton === false">
+        <md-button class="md-raised upload-button "> Do not specify visibility list (so only you can view)</md-button>
+    </span>
+
+        <span class="upload-button-wrapper" ng-click="doSpecify()" ng-if="main.login === true && photoUpload.specifyButton === true" >
+        <md-button class="md-raised upload-button "> Specify visibility list</md-button>
+    </span>
+
+    <span class="file-browser" ng-if="main.login === true" >
+         <md-button class="md-raised browse-button">
+        <label class="file-upload">
+                Browse Files... (Please click at the center of the button)
+                <input class="image-input" type="file" id="file" accept="image/*" onchange="angular.element(this).scope().inputFileNameChanged(this)"/>
+        </label>
+               </md-button>
+    </span>
+
+    <span class="upload-button-wrapper" ng-click="uploadPhoto()" ng-if="main.login === true" >
+        <md-button class="md-raised upload-button "> Upload</md-button>
+    </span>
+    </md-card>
+</div>

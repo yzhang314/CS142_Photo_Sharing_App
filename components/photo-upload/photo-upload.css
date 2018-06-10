@@ -1,0 +1,56 @@
+
+.file-upload{
+    font-family:Palatino, Helvetica, sans-serif;
+    color: black;
+    padding:28px;
+    width:100%;
+}
+
+input[type="file"] {
+    display:none;
+}
+
+.file-browser {
+    float:left;
+}
+
+.browse-button {
+    float:left;
+    padding-left:10px;
+    padding-right:10px;
+    width:98%;
+}
+
+.upload-button-wrapper{
+    float:left;
+    margin-top:5px;
+}
+
+
+.upload-button {
+    float:left;
+    width:98%;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.upload-button {
+    font-family:Palatino, Helvetica, sans-serif;
+}
+
+.upload-photo {
+    padding:10px;
+}
+
+.user-select-list {
+    font-family:Palatino, Helvetica, sans-serif;
+    margin-left:15px;
+}
+
+
+.upload-photo-title {
+    font-family:Palatino, Helvetica, sans-serif;
+    color:black;
+    font-size:20px;
+
+}

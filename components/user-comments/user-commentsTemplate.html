@@ -1,0 +1,14 @@
+<div class="user-comments" ng-init="userCommentInit()">
+    <h3 class="header-photo"> Here are all comments authorized by {{userComment.user.first_name + " " + userComment.user.last_name}} </h3>
+    <md-card class="card comment-card" ng-repeat="comments in userComment.comments">
+         <img class="md-card-image comment-image" ng-src="/images/{{comments.imageName}}">
+        <md-card-content class="comment-container" flex>
+            <p class="photo-credit">Photo by <a href="{{'#!/users/' + main.checkStatus + '/' + comments.user._id}}"> <strong> {{comments.photoBy.first_name}} {{comments.photoBy.last_name}} </strong> </a> </p>
+            <p class="date"> {{comments.date_time}} </p>
+            <p class="photo-comment"> <strong> {{comments.user.first_name}} {{comments.user.last_name}} </strong> writes:</p>
+            <p class="photo-comment"> {{comments.myComment}} </p>
+            <span class="delete-comment2-button-wrapper" ng-if="comments.user._id === main.loginUser._id"> <md-button ng-click="onDeleteComment2(comments, comments.photoId)" class="md-warn md-raised md-hue-2 delete-comment2-button">Delete Comment</md-button> </span>
+            <span class="photo-detail-button-wrapper"><a href="{{'#!/photos-advance/' +  main.checkStatus + '/' + comments.photoBy._id + '/' + comments.imageId}}"> <md-button class="md-raised md-primary photo-detail-button">Photo Detail</md-button></a></div>
+        </md-card-content>
+    </md-card>
+</div>

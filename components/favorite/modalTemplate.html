@@ -1,0 +1,12 @@
+<md-dialog aria-label="test">
+<div class="modal">
+    <md-card class="modal-container">
+        <img class="md-card-image modal-image" ng-src="/images/{{modalImage.file_name}}">
+        <md-card-content class="modal-text" flex>
+            <p class="modal-photo-credit">Photo by <a href="{{'#!/users/' + 'true' + '/' + modalImage.user._id}}"> <strong> {{modalImage.user.first_name}} {{modalImage.user.last_name}} </strong> </a> </p>
+            <p class="modal-date"> Creation date and time: {{modalImage.date_time}}</p>
+            <span class="modal-photo-detail-button-wrapper"><a href="{{'#!/photos-advance/' +  'true' + '/' + modalImage.user._id + '/' + modalImage.photo_id}}"> <md-button class="md-raised md-primary modal-photo-detail-button">Photo Detail</md-button></a></span>
+        </md-card-content>
+    </md-card>
+</div>
+</md-dialog>

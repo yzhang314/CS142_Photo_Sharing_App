@@ -1,0 +1,83 @@
+.user-detail {
+    font-family:Palatino, Helvetica, sans-serif;
+    font-size:large;
+}
+
+a {
+    text-decoration:none;
+}
+
+.button-to-photo {
+    margin-top:10px;
+    width:100%;
+    background-color: #4253af;
+    color:white;
+    font-family:Palatino, Helvetica, sans-serif;
+    padding:10px;
+}
+
+.button-to-delete {
+    margin-top:10px;
+    width:100%;
+    background-color: #c64e2a;
+    color:white;
+    font-family:Palatino, Helvetica, sans-serif;
+    padding:10px;
+}
+
+.user-profile {
+    padding-left:20px;
+    padding-right:20px;
+    margin:10px;
+    padding-bottom:10px;
+}
+
+.mention-container {
+    margin-top:10px;
+    margin-left:10px;
+    margin-right:10px;
+    padding:0;
+}
+
+.mention-title {
+    color:black;
+    font-size:20px;
+}
+
+
+.mention-text {
+    padding:10px;
+}
+
+.mention-card {
+    margin-top:10px;
+    float:left;
+    width:auto;
+    display:inline-block;
+    margin-bottom:10px;
+}
+
+.mention-photo-credit {
+    font-size:10px;
+}
+
+.mention-photo-detail-button-wrapper {
+    float:right;
+    margin-right:0;
+    margin-bottom:10px;
+}
+
+.mention-photo-detail-button {
+    font-size:10px;
+    margin:0;
+}
+
+.every-mention{
+    float:left;
+}
+
+.mention-image{
+    height:150px;
+    width:auto;
+    min-width:150px;
+}

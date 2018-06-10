@@ -1,0 +1,46 @@
+<div class="user-detail" ng-init="userDetailInit()">
+    <md-card class="user-profile">
+    <h3 class="header-photo"> Welcome to {{userDetail.user.first_name + " " + userDetail.user.last_name}}'s photo gallery </h3>
+    <div class="user-id">Id: {{userDetail.user._id}} </div>
+    <div class="user-first-name">First Name: {{userDetail.user.first_name}} </div>
+    <div class="user-last-name">Last Name: {{userDetail.user.last_name}} </div>
+    <div class="location"> Location: {{userDetail.user.location}} </div>
+    <div class="occupation">Occupation: {{userDetail.user.occupation}} </div>
+    <div class="description">Description: {{userDetail.user.description}}</div>
+    <div class="photos">
+        <div ng-if="main.checkStatus === false">
+            <a href="{{'#!/photos/' + main.checkStatus + '/' + userDetail.user._id}}" >
+            <button class="button-to-photo">
+                Here is my photo gallery!
+            </button>
+            </a>
+        </div>
+        <div ng-if="main.checkStatus === true">
+            <a href="{{'#!/photos-advance/' +  main.checkStatus + '/' + userDetail.user._id + '/' + userDetail.firstPhoto}}" >
+                <button class="button-to-photo">
+                    Here is my photo gallery!
+                </button>
+            </a>
+        </div>
+    </div>
+    <div class="delete-user" ng-click="onDeleteUser()"ng-if="userDetail.user._id === main.loginUser._id">
+        <button class="button-to-delete">
+            Delete my user profile
+        </button>
+    </div>
+    </md-card>
+
+    <md-card class="mention-container">
+        <md-subheader ng-if="userDetail.mentions.length > 0" class="mention-title" class="md-no-sticky" > <strong>Photos that mention this user: </strong> </md-subheader>
+        <md-subheader ng-if="userDetail.mentions.length === 0" class="mention-title" class="md-no-sticky" > <strong>No people mention you yet. :-) </strong> </md-subheader>
+        <div class="every-mention">
+        <md-card class="mention-card" ng-repeat="mentions in userDetail.mentions">
+            <img class="md-card-image mention-image" ng-src="/images/{{mentions.file_name}}">
+            <md-card-content class="mention-text" flex>
+                <p class="mention-photo-credit">Photo by <a href="{{'#!/users/' + main.checkStatus + '/' + mentions.user._id}}"> <strong> {{mentions.user.first_name}} {{mentions.user.last_name}} </strong> </a> </p>
+                <span class="mention-photo-detail-button-wrapper"><a href="{{'#!/photos-advance/' +  main.checkStatus + '/' + mentions.user._id + '/' + mentions.photo_id}}"> <md-button class="md-raised md-primary mention-photo-detail-button">Photo Detail</md-button></a></span>
+            </md-card-content>
+        </md-card>
+        </div>
+    </md-card>
+</div>
